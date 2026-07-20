@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: d3a527b05ad621a47849900f5849db58
 ModelImporter:
-  serializedVersion: 22200
+  serializedVersion: 24501
   internalIDToNameTable: []
   externalObjects:
   - first:
@@ -19,11 +19,17 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Colour_Palette_Sci_Fi_Roughness
     second: {fileID: 7515526912956163633, guid: ad39e1743733cb048b438c089ba4ec23, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Colour_Palette_SciFi
+    second: {fileID: 2800000, guid: 35a55e0c1ed12ac4d963b1273c1900f6, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1
+    searchTexturesGlobally: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -71,6 +77,11 @@ ModelImporter:
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    importUVs: -1
+    importVertexColors: 1
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
@@ -90,6 +101,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+    calculateBlendshapeNormalsDeltaFromImportedNormals: 1
   referencedClips: []
   importAnimation: 1
   humanDescription:
