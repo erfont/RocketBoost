@@ -83,7 +83,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.371327, y: 1.894392, z: 1}
+  m_Size: {x: 1.7, y: 1.89, z: 1}
   m_Center: {x: 0.42827678, y: 0.84085417, z: 0}
 --- !u!82 &2706313824149343468
 AudioSource:
@@ -96,7 +96,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 95cbbd6e094d7214e8441f72d9d57c81, type: 3}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -195,6 +195,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionHandling
   LevelLoadTimeLapse: 2
+  crash: {fileID: 8300000, guid: 205f28562a4b60a409f61efddd03ee92, type: 3}
+  success: {fileID: 8300000, guid: da96fc5ecf55540449d99ece8714a0ec, type: 3}
 --- !u!114 &6781943204409626933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,6 +261,7 @@ MonoBehaviour:
     m_Flags: 0
   ThrustForce: 1000
   RotationStrength: 35
+  mainEngine: {fileID: 8300000, guid: 95cbbd6e094d7214e8441f72d9d57c81, type: 3}
 --- !u!1001 &1135698540316856538
 PrefabInstance:
   m_ObjectHideFlags: 0
