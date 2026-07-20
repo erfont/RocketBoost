@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class CollisionHandling : MonoBehaviour
 {
@@ -10,12 +12,26 @@ public class CollisionHandling : MonoBehaviour
                 Debug.Log("I collided with a Friend");
                 break;
             case "Finish":
-                Debug.Log("I reached the end");
+                LoadNextLevel();
                 break;
             default:
-                Debug.Log("I collided with something else");
+                ReloadLevel();
                 break;
 
+        }
+
+        void LoadNextLevel()
+        {
+            int CurrentScene = SceneManager.GetActiveScene().buildIndex;
+            Debug.Log("Number of scenes" + SceneManager.sceneCount);
+            Debug.Log("Current scene " + CurrentScene);
+            Debug.Log("Calculation " + (CurrentScene+1) % SceneManager.sceneCountInBuildSettings);
+            SceneManager.LoadScene((CurrentScene+1) % SceneManager.sceneCountInBuildSettings);
+        }
+        void ReloadLevel()
+        {
+            int CurrentScene = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(CurrentScene);
         }
     }
 }
