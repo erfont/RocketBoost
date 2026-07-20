@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
 public class CollisionHandling : MonoBehaviour
 {
+    [SerializeField] float LevelLoadTimeLapse = 2f;
     void OnCollisionEnter(Collision other)
     {
         switch(other.gameObject.tag)
@@ -12,26 +14,37 @@ public class CollisionHandling : MonoBehaviour
                 Debug.Log("I collided with a Friend");
                 break;
             case "Finish":
-                LoadNextLevel();
+                StartSuccessSequence();
                 break;
             default:
-                ReloadLevel();
+                StartCrashSequence();                
                 break;
 
         }
+        
+    }
 
-        void LoadNextLevel()
-        {
-            int CurrentScene = SceneManager.GetActiveScene().buildIndex;
-            Debug.Log("Number of scenes" + SceneManager.sceneCount);
-            Debug.Log("Current scene " + CurrentScene);
-            Debug.Log("Calculation " + (CurrentScene+1) % SceneManager.sceneCountInBuildSettings);
-            SceneManager.LoadScene((CurrentScene+1) % SceneManager.sceneCountInBuildSettings);
-        }
-        void ReloadLevel()
-        {
-            int CurrentScene = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(CurrentScene);
-        }
+    private void StartSuccessSequence()
+    {
+        GetComponent<Movement>().enabled = false;
+        Invoke("LoadNextLevel", LevelLoadTimeLapse);       
+    }
+
+    private void StartCrashSequence()
+    {
+        GetComponent<Movement>().enabled = false;
+        Invoke("ReloadLevel", LevelLoadTimeLapse);
+    }
+
+    void LoadNextLevel()
+    {
+        int CurrentScene = SceneManager.GetActiveScene().buildIndex;
+        
+        SceneManager.LoadScene((CurrentScene+1) % SceneManager.sceneCountInBuildSettings);
+    }
+    void ReloadLevel()
+    {
+        int CurrentScene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(CurrentScene);
     }
 }

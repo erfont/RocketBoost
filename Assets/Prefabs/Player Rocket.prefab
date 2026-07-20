@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5903155203156882278}
-  - component: {fileID: 6781943204409626933}
   - component: {fileID: 3578917299458963970}
   - component: {fileID: 5087105184371985065}
   - component: {fileID: 2706313824149343468}
   - component: {fileID: 6175362398983174420}
+  - component: {fileID: 6781943204409626933}
   m_Layer: 0
   m_Name: Player Rocket
   m_TagString: Untagged
@@ -37,70 +37,6 @@ Transform:
   - {fileID: 6288129382039332708}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6781943204409626933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 385663895524283372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 949818ca30138cb42955b9916d79653f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Movement
-  thrust:
-    m_Name: Thrust
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 39b2b7ee-ce6a-48a7-a9d9-9f9d472b2e5e
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: faf6c411-3792-4764-8d02-5793920f5f40
-      m_Path: <Keyboard>/space
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Thrust
-      m_Flags: 0
-    m_Flags: 0
-  rotation:
-    m_Name: Rotation
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 943d93f5-1403-40f0-9099-fd61ba0661f5
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: Keyboard
-      m_Id: e4876449-a9e8-45b8-90b6-0d910af1080b
-      m_Path: 1DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Rotation
-      m_Flags: 4
-    - m_Name: negative
-      m_Id: c6eda726-76f0-4174-8cd4-7fb18382a00d
-      m_Path: <Keyboard>/leftArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Rotation
-      m_Flags: 8
-    - m_Name: positive
-      m_Id: 1efd216f-2fe1-4470-91f6-3adcaa0724b3
-      m_Path: <Keyboard>/rightArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Rotation
-      m_Flags: 8
-    m_Flags: 0
-  ThrustForce: 1000
-  RotationStrength: 20
 --- !u!54 &3578917299458963970
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -258,6 +194,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 902bcc06b20a53a4590705c25a458522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionHandling
+  LevelLoadTimeLapse: 2
+--- !u!114 &6781943204409626933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385663895524283372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 949818ca30138cb42955b9916d79653f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Movement
+  thrust:
+    m_Name: Thrust
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 39b2b7ee-ce6a-48a7-a9d9-9f9d472b2e5e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: faf6c411-3792-4764-8d02-5793920f5f40
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Thrust
+      m_Flags: 0
+    m_Flags: 0
+  rotation:
+    m_Name: Rotation
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 943d93f5-1403-40f0-9099-fd61ba0661f5
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Keyboard
+      m_Id: e4876449-a9e8-45b8-90b6-0d910af1080b
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Rotation
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: c6eda726-76f0-4174-8cd4-7fb18382a00d
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Rotation
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 1efd216f-2fe1-4470-91f6-3adcaa0724b3
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Rotation
+      m_Flags: 8
+    m_Flags: 0
+  ThrustForce: 1000
+  RotationStrength: 35
 --- !u!1001 &1135698540316856538
 PrefabInstance:
   m_ObjectHideFlags: 0
