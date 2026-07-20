@@ -8,7 +8,11 @@ public class Movement : MonoBehaviour
     [SerializeField] InputAction rotation;
     [SerializeField] float ThrustForce = 1000;
     [SerializeField] float RotationStrength = 20;
-    [SerializeField] AudioClip mainEngine;
+    [SerializeField] AudioClip mainEngineSFX;
+
+    [SerializeField] ParticleSystem mainEngineParticles;
+    [SerializeField] ParticleSystem RightThrustParticles;
+    [SerializeField] ParticleSystem LeftThrustParticles;
 
     Rigidbody rb;
     AudioSource audioSource;
@@ -48,6 +52,11 @@ public class Movement : MonoBehaviour
             ApplyRotation(RotationStrength);
         }
         else if (rotationInput > 0) ApplyRotation(-RotationStrength);
+        else
+        {
+            RightThrustParticles.Stop();
+            LeftThrustParticles.Stop();
+        }
     }
 
     private void ApplyRotation(float RotationStrength)
@@ -55,6 +64,11 @@ public class Movement : MonoBehaviour
         rb.freezeRotation = true;
         transform.Rotate(Vector3.forward * RotationStrength * Time.fixedDeltaTime);
         rb.freezeRotation = false;
+        if (RotationStrength > 0)  
+        {
+            if (!RightThrustParticles.isPlaying) RightThrustParticles.Play();
+        }
+        else if (!LeftThrustParticles.isPlaying) LeftThrustParticles.Play();
 
     }
 
@@ -63,11 +77,13 @@ public class Movement : MonoBehaviour
         if (thrust.IsPressed()) 
         {
             rb.AddRelativeForce(Vector3.up * ThrustForce * Time.fixedDeltaTime);
-            if (!audioSource.isPlaying) audioSource.PlayOneShot(mainEngine);
+            if (!audioSource.isPlaying) audioSource.PlayOneShot(mainEngineSFX);
+            if (!mainEngineParticles.isPlaying) mainEngineParticles.Play();
         }
         else
         {
             audioSource.Stop();
+            mainEngineParticles.Stop();
         }
     }
 }
