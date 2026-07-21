@@ -59,6 +59,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6f86c34ae85b73944b67468ca1680b59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6705158009653600766}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6f86c34ae85b73944b67468ca1680b59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4351868332257804887}
   m_SourcePrefab: {fileID: 100100000, guid: 6f86c34ae85b73944b67468ca1680b59, type: 3}
 --- !u!1 &8606121365415806851 stripped
 GameObject:
@@ -88,3 +91,17 @@ CapsuleCollider:
   m_Height: 10.89
   m_Direction: 2
   m_Center: {x: 0.41431528, y: 0.0000007748604, z: -0.22240329}
+--- !u!114 &4351868332257804887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8606121365415806851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c5c2d4830443745b939b40f9e5e010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleFloat
+  amplitude: 0.5
+  frequency: 1
